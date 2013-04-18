@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang='ko'>
+
+  <head>
+    <meta charset='utf-8'>    
+    <title>Blog Feed</title>
+    <script type='text/javascript' src='/js/jquery.min.js'></script>
+  </head>
+
+  <body>
+    <h1>Blog Feed</h1>
+    <ul id='feed'></ul>
+  </body>
+
+  <script type='text/javascript'>
+    var es = new EventSource('/feed_stream');
+    es.onmessage = function(e) {
+      var post = JSON.parse(e.data);
+      $('#feed').append("<li>" + post.title + " @" + post.created_at + "</li>")
+    }
+  </script>
+
+</html>
