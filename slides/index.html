@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ko">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Cloud in Action for Developers</title>
+
+		<meta name="description" content="Practical Cloud computing examples for developer perspective">
+		<meta name="author" content="Hyunseok Hwang">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Font Awesome -->
+		<link rel="stylesheet" href="lib/css/font-awesome.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+        <h1><i class='icon-cloud'></i> Cloud <h2>in Action</h2></h1>
+          <br/>
+					<h4>클라우드를 활용한 웹 애플리케이션 개발</h4>
+					<p>
+						<small>다음커뮤니케이션 황현석</small>
+					</p>
+				</section>
+
+        <section>
+          <h3>About Speaker: 황현석</h3>
+          <br/>
+          <ul>
+            <li>Software Engineer@Daum (2009~)</li>
+            <li>사내 클라우드 플랫폼 개발/운영</li>
+            <li>OSS minor contributor</li>
+            <li><i class='icon-envelope'></i> <a href="mailto:fr.hwang@gmail.com">fr.hwang@gmail.com</a></li>
+            <li><i class='icon-twitter'></i> <a href="https://twitter.com/francis_hwang" target="_new">francis_hwang</a>
+            <li><i class='icon-github'></i> <a href="https://github.com/frhwang" target="_new">frhwang</a></li>
+          </ul>
+        </section>
+
+				<section>
+					<h2>Agenda</h2>
+					<ul>
+            <li>Cloud?</li>
+            <li>IaaS vs. PaaS</li>
+            <li>Demo
+              <ul>
+                <li>IaaS - AWS (Video)</li>
+                <li>PaaS - Cloud Foundry (Live)</li>
+              </ul>
+            </li>
+            <li>Use cases @ Daum</li>
+					</ul>
+				</section>
+
+        <section>
+          <section>
+            <h2><i class='icon-cloud'></i> Cloud?</h2>
+          </section>
+
+          <section>
+            <h3>클라우드에 대한 편견</h3>
+            <br />
+            <ul>
+              <li>서버 가상화 (Virtualization)</li>
+              <li>스토리지 서비스 (ex. Dropbox)</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>NIST definition</h3>
+            <ul>
+              <li>On-demand self-service</li>
+              <li>Broad network access</li>
+              <li>Resource pooling</li>
+              <li>Rapid elasticity/expansion</li>
+              <li>Measured service</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Why Cloud?</h3>
+            <h4>as a Developer</h4>
+            <br/>
+            <p class="fragment">인프라/플랫폼 = 개발자가 이용 가능한 서비스</p>
+            <p class="fragment"><i class='icon-angle-down'></i><br/>서비스를 이용해 개발에 집중</p>
+            <p class="fragment"><i class='icon-angle-down'></i><br/>보다 빠르고 기민하게 좋은 제품을 만들어 출시</p>
+            <br/>
+            <h4 class="fragment"><i class='icon-quote-left'></i> Agile & Lean Develpoment <i class='icon-quote-right'></i></h4>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>IaaS vs. PaaS</h2>
+          </section>
+
+          <section>
+            <h3>Service Models</h3>
+            <p><img src="img/cloud_categories.jpg" width="600"></p>
+          </section>
+
+          <section>
+            <h3>Control vs. Cost-efficiency</h3>
+            <p><img src="img/cloud_service_model_pyramid.png" width="600"></p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>AWS in Action!</h2>
+          </section>
+
+          <section>
+            <h3>Amazon Web Service</h3>
+            <br />
+            <ul>
+              <li><a href="http://aws.amazon.com" target="_new">aws.amazon.com</a></li>
+              <li>2006년부터 사업 시작</li>
+              <li>Public Cloud Giant</li>
+              <li>연매출 $ 20억 (2012년 기준)</li>
+              <li>전세계 9개 지역에 IDC 보유</li>
+            <ul>
+          </section>
+
+          <section>
+            <h3>Demo Overview</h3>
+            <br/>
+            <ul>
+              <li>간단한 웹 서버 배포 예제</li>
+              <li>사용 컴포넌트
+                <ul>
+                  <li>EC2 = Elastic Compute Cloud
+                    <ul>
+                      <li>Virtual Private Server</li>
+                    </ul>
+                  </li>
+                  <li>Elastic IP</li>
+                    <ul>
+                      <li>Dynamic Public IP</li>
+                    </ul>
+                  </li>
+                  <li>S3 = Simple Storage Service
+                    <ul>
+                      <li>Object Storage</li>
+                    </ul>
+                  </li>
+                </ul>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Demo Video</h3>
+            <br/>
+            <video width="600" controls>
+              <source src="video/aws_demo.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <br/>
+            <br/>
+            <p><small>From AWS 101</small></p>
+            <p><small><a href="http://www.youtube.com/watch?v=kMExnVKhmYc" target="_new">http://www.youtube.com/watch?v=kMExnVKhmYc</a></small><p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Cloud Foundry in Action!</h2>
+          </section>
+
+          <section>
+            <h3>Cloud Foundry</h3>
+            <br/>
+            <ul>
+              <li><a href="http://loudfoundry.com" target="_new">cloudfoundry.com</a></li>
+              <li>Open Platform-as-a-Service</li>
+              <li>무료 베타 서비스 중</li>
+              <li>다수의 3rd Party Player</li>
+              <li>클라이언트 도구
+                <ul>
+                  <li>VMC (CLI)</li>
+                  <li>Eclipse IDE Plugin</li>
+                </ul>
+              </li>
+            <ul>
+          </section>
+
+          <section>
+            <h3>VMC 주요 명령</h3>
+            <br/>
+            <p><pre><code># 클라우드 선택
+$ vmc target api.cloudfoundry.com
+
+# 로그인
+$ vmc login
+
+# 앱 배포
+$ vmc push
+
+# 앱 삭제
+$ vmc delete</code></pre></p>
+          </section>
+
+          <section>
+            <h3>Cloud Foundry Examples</h3>
+            <br/>
+            <ul>
+              <li>Simple Web Page</li>
+              <li>Simple Blog (DB, + Cache/MQ)</li>
+              <li>Blog Feed (MQ)</li>
+            <ul>
+          </section>
+
+          <section>
+            <h3>Base Code</h3>
+            <br/>
+            <p>Ruby + Sinatra (+ DB, Cache, Message Queue)</p>
+					  <pre><code>require 'sinatra'
+
+get '/' do
+  host = ENV['VCAP_APP_HOST'] # 할당된 호스트 (IP)
+  port = ENV['VCAP_APP_PORT'] # 할당된 포트
+  "&lt;h1&gt;Hello from the Cloud! via: #{host}:#{port}&lt;/h1&gt;"
+end</code></pre>
+          </section>
+
+          <section>
+            <h3>Elastic Scaling</h3>
+            <br/>
+            <p>Don't guess, measure!</p>
+					  <pre><code>$ vmc instances 앱이름</code></pre>
+          </section>
+
+          <section>
+            <h3>Simple Blog Example</h3>
+            <br/>
+            <p>Service = MySQL, Redis, MongoDB, RabbitMQ, etc...</p>
+            <pre><code>require 'cf-runtime'
+
+class Post
+  # 중간 생략...
+
+  def self.db_url
+    if CloudApp.running_in_cloud?
+      svc = CloudApp.service_props 'blog-db'
+      "mysql://#{svc[:username]}:#{svc[:password]}@#{svc[:host]}:#{svc[:port]}/#{svc[:database]}"
+    else
+      "sqlite3:blog.db"
+    end
+  end
+end</code></pre>
+          </section>
+        </section>
+
+				<section>
+          <h2>Use cases @ Daum</h2>
+          <br/>
+          <ul>
+            <li>Cloud Foundry
+              <ul>
+                <li>사내 개발 및 실험 환경 (Sandbox)</li>
+              </ul>
+            </li>
+            <li>Redis Cache Cloud
+              <ul>
+                <li>미디어다음, 카페, 블로그, Tistory 등</li>
+              </ul>
+            </li>
+            <li>애조로 DNS
+              <ul>
+                <li>사내 Dynamic DNS 서비스</li>
+                <li>개인 개발 환경 및 각종 백엔드 호스트 연결</li>
+              </ul>
+            </li>
+          <ul>
+        </section>
+
+				<section>
+					<h1>The end</h1>
+					<h3>감사합니다</h3>
+          <p><a href="https://github.com/frhwang/cf-demo">github.com/frhwang/cf-demo</a></p>
+          <br/>
+          <small style="font-size: 0.5em">이 발표자료는 <a href="http://lab.hakim.se/reveal-js" target="_new">Reveal.JS</a>로 작성 되었습니다.</small>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
