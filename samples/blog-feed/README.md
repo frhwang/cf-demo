@@ -4,7 +4,7 @@
 
 - Sinatra + RabbitMQ
 - RabbitMQ Service required
-- Deploy [Simple Notifiable Blog app](../notifiable-blog) FIRST!
+- Deploy [Simple Notifiable Blog](../notifiable-blog) app FIRST!
 
 ## Deployment
 
