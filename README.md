@@ -1,6 +1,6 @@
 # cf-demo
 
-**DEPRECATED - This Cloud Foundry setup no longer supported. DO NOT TRY!** 
+**DEPRECATED - This Cloud Foundry setup is no longer supported. DO NOT TRY!** 
 
 > Very simple **Cloud Foundry** demo for presentation at KOREN 2013
 
