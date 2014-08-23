@@ -1,5 +1,7 @@
 # cf-demo
 
+**DEPRECATED - This Cloud Foundry setup no longer supported. DO NOT TRY!** 
+
 > Very simple **Cloud Foundry** demo for presentation at KOREN 2013
 
 Translated in other languages:
