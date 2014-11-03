@@ -1,5 +1,7 @@
 # cf-demo
 
+**주의 - 이 Cloud Foundry 구성은 더이상 유효하지 않습니다. 사용하지 마세요.**
+
 > 아주 간단한 **Cloud Foundry** 시연 (KOREN 2013 세션 발표용)
 
 Translated in other languages:
